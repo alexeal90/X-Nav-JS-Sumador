@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+   	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<style type="text/css" media="screen">
+       body{
+         padding:0;
+         margin:50px auto;
+         text-align:center;
+         font:100% Verdana;
+       }
+       h1 {
+         font-size: 1.5em;
+       }
+       #sentence {
+         font-size: 4em;
+       }
+       #another {
+         font-size: 2em;
+       }
+       footer {
+         font-size: 0.75em;
+       }
+   	</style>
+   	<title>Calculadora simple</title>
+		<script type="text/javascript" charset="utf-8">
+      	function suma(optag, restag){
+      		var operadores= document.getElementById(optag);
+				var numeros = operadores.innerHTML.split("+");
+				var resultado = document.getElementById(restag);
+				var solucion = parseInt(numeros[0]) + parseInt(numeros[1]);
+				resultado.innerHTML = "= " + solucion;
+     		}
+			function sumaRand (optag){
+				var operadores = document.getElementById(optag);
+				var rand1 = Math.round(Math.random()*10);
+				var rand2 = Math.round(Math.random()*10);
+				operadores.innerHTML = rand1 + "+" + rand2;
+			}
+     </script>
+   </head>
+   <body>
+		<p>Adder...<span id='op'>5+3</span>
+		<span id='res'></span> <a href="javascript:suma('op', 'res')">Sumalos!</a></p>
+		<p id='otra'><a href="javascript:sumaRand('op')">Otra Suma!</a></p>
+   </body>
+</html>
